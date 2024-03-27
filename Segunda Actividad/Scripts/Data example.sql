@@ -69,3 +69,43 @@ INSERT INTO Factura (Fecha, Precio, IdPaciente) VALUES
 
 
 
+-- Insertar diez registros en la tabla Medicamento
+INSERT INTO Medicamento (NombreMedicamento) VALUES
+('Paracetamol'),
+('Ibuprofeno'),
+('Omeprazol'),
+('Amoxicilina'),
+('Loratadina'),
+('Aspirina'),
+('Diazepam'),
+('Atorvastatina'),
+('Metformina'),
+('Prednisona');
+
+-- Insertar diez registros en la tabla PacienteMedicamento
+INSERT INTO PacienteMedicamento (IdPaciente, IdMedicamento, Dosis, Fecha) VALUES
+(1, 1, '500 mg', '2024-03-01'),
+(2, 2, '200 mg', '2024-03-02'),
+(3, 3, '20 mg', '2024-03-03'),
+(4, 4, '500 mg', '2024-03-04'),
+(5, 5, '10 mg', '2024-03-05'),
+(6, 6, '100 mg', '2024-03-06'),
+(7, 7, '5 mg', '2024-03-07'),
+(8, 8, '40 mg', '2024-03-08'),
+(9, 9, '500 mg', '2024-03-09'),
+(10, 10, '20 mg', '2024-03-10');
+
+-- Insertar diez registros en la tabla MedicoProcedimiento
+INSERT INTO MedicoProcedimiento (IdMedico, IdProcedimiento) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
+(10, 10);
+
+
