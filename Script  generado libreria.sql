@@ -31,7 +31,7 @@ ENGINE = InnoDB;
 -- Table `LibreriaBuscaLibre`.`libro`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `LibreriaBuscaLibre`.`libro` (
-  `ISBN` VARCHAR(10) NOT NULL,
+  `ISBN` VARCHAR(13) NOT NULL,
   `titulo` VARCHAR(45) NOT NULL,
   `numero_paginas` VARCHAR(45) NULL,
   `nombre_editorial` VARCHAR(50) NOT NULL,
@@ -71,7 +71,7 @@ ENGINE = InnoDB;
 -- Table `LibreriaBuscaLibre`.`libro_autor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `LibreriaBuscaLibre`.`libro_autor` (
-  `ISBN_libro` VARCHAR(10) NOT NULL,
+  `ISBN_libro` VARCHAR(13) NOT NULL,
   `id_autor` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`ISBN_libro`, `id_autor`),
   INDEX `id_autor_idx` (`id_autor` ASC) VISIBLE,
@@ -92,7 +92,7 @@ ENGINE = InnoDB;
 -- Table `LibreriaBuscaLibre`.`libro_cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `LibreriaBuscaLibre`.`libro_cliente` (
-  `ISBN_libro_cliente` VARCHAR(10) NOT NULL,
+  `ISBN_libro_cliente` VARCHAR(13) NOT NULL,
   `id_cliente` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`ISBN_libro_cliente`, `id_cliente`),
   INDEX `id_cliente_idx` (`id_cliente` ASC) VISIBLE,
