@@ -3,19 +3,19 @@ USE `hospital`;
 
 -- SP 1: CREAR MEDICO 
 -- Llamar al procedimiento almacenado utilizando CALL
--- CALL sp_crearAutor('6', '1998-02-06', 'Colombiano', 'David Beckham');
--- SELECT * FROM AUTOR
+-- CALL sp_InsertarMedico(11, 'Julian', 'Alvarez', 'Dermatología');
+-- SELECT * FROM Medico
 -- Definir el procedimiento almacenado con el delimitador correcto
 DELIMITER //
 
-CREATE PROCEDURE sp_crearAutor 
-    (IN Id INT,
-    IN FechaNacimiento DATE,
-    IN Nacionalidad NVARCHAR(100),
-    IN Nombre NVARCHAR(100))
+CREATE PROCEDURE  sp_InsertarMedico 
+    (IN IdMedico INT,
+    IN NombreMedico VARCHAR(100),
+    IN ApellidoMedico VARCHAR(100),
+    IN Especialidad VARCHAR(50))
 BEGIN
-    INSERT INTO autor (id, `fecha de nacimiento`, nacionalidad, nombre)
-    VALUES (Id, FechaNacimiento, Nacionalidad, Nombre);
+    INSERT INTO Medico (IdMedico, NombreMedico, ApellidoMedico, Especialidad)
+    VALUES (IdMedico, NombreMedico, ApellidoMedico, Especialidad);
 END //
 
 -- Restaurar el delimitador por defecto
@@ -23,24 +23,24 @@ DELIMITER ;
 
 -- ==============================================================================================
 
--- SP 2: EDITAR AUTOR 
+-- SP 2: EDITAR MEDICO 
 -- Llamar al procedimiento almacenado utilizando CALL
--- CALL sp_editarAutor('6', '2003-02-06', 'Peruano', 'David Salazar');
--- SELECT * FROM AUTOR
+-- CALL sp_editarMedico(11, 'David', 'Alvarez', 'Cardiología');
+-- SELECT * FROM Medico
 -- Definir el procedimiento almacenado con el delimitador correcto
 DELIMITER //
 
-CREATE PROCEDURE sp_editarAutor 
-    (IdCompare VARCHAR(10),
-    FechaNacimiento VARCHAR(100),
-	Nacionalidad NVARCHAR(100),
-	Nombre NVARCHAR(100))
+CREATE PROCEDURE sp_editarMedico 
+    (IN IdMedicoCompare INT,
+    IN NombreMedicoNuevo VARCHAR(100),
+    IN ApellidoMedicoNuevo VARCHAR(100),
+    IN EspecialidadNuevo VARCHAR(50))
 BEGIN
-    UPDATE autor
+    UPDATE Medico
     SET 
-        `fecha de nacimiento` = FechaNacimiento, nacionalidad = Nacionalidad, nombre = Nombre
+        NombreMedico = NombreMedicoNuevo, ApellidoMedico = ApellidoMedicoNuevo, Especialidad = EspecialidadNuevo
     WHERE
-        id = IdCompare;
+        idMedico = IdMedicoCompare;
 END //
 
 -- Restaurar el delimitador por defecto
@@ -48,23 +48,22 @@ DELIMITER ;
 
 -- ==============================================================================================
 
--- SP 3: CONSULTAR AUTOR 
+-- SP 3: CONSULTAR MEDICO 
 -- Llamar al procedimiento almacenado utilizando CALL
--- CALL sp_buscarAutor('6');
--- SELECT * FROM AUTOR
+-- CALL sp_buscarMedico(6);
 -- Definir el procedimiento almacenado con el delimitador correcto
 DELIMITER //
 
-CREATE PROCEDURE sp_buscarAutor 
-    (IdCompare VARCHAR(10))
+CREATE PROCEDURE sp_buscarMedico
+    (IdMedicoCompare INT)
 BEGIN
 	SELECT 
-		id
-        ,`fecha de nacimiento`
-        ,nacionalidad
-        ,nombre
-	FROM autor 
-    WHERE id = IdCompare;
+		`IdMedico`
+        ,`NombreMedico`
+        ,`ApellidoMedico`
+        ,`Especialidad`
+	FROM Medico 
+    WHERE idMedico = IdMedicoCompare;
 END //
 
 -- Restaurar el delimitador por defecto
@@ -72,18 +71,18 @@ DELIMITER ;
 
 -- ==============================================================================================
 
--- SP 3: ELIMINAR AUTOR 
+-- SP 4: ELIMINAR MEDICO 
 -- Llamar al procedimiento almacenado utilizando CALL
--- CALL sp_eliminarAutor('6');
--- SELECT * FROM AUTOR
+-- CALL sp_eliminarMedico(11);
+-- SELECT * FROM Medico
 -- Definir el procedimiento almacenado con el delimitador correcto
 DELIMITER //
 
-CREATE PROCEDURE sp_eliminarAutor 
-    (IdCompare VARCHAR(10))
+CREATE PROCEDURE sp_eliminarMedico 
+    (IdMedicoCompare INT)
 BEGIN
-	DELETE FROM autor 
-    WHERE id = IdCompare;
+	DELETE FROM Medico 
+    WHERE IdMedico = IdMedicoCompare;
 END //
 
 -- Restaurar el delimitador por defecto
