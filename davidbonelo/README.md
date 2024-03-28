@@ -15,3 +15,7 @@ Las 2 vistas más relevantes para obtener de esta base de datos son las que otor
 - Clientes que más libros compraron en orden
 
 Archivo [libreria_views.sql](./libreria_views.sql)
+
+## Segunda actividad
+
+De acuerdo al modelo relacional del hospital, realizo la definición de la base de datos en sql: [hospital_schema.sql](./hospital_schema.sql)
