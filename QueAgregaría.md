@@ -1,3 +1,9 @@
+### Ambos modelos estan bien, pueden estar mejor pero permite consultar una gran variedad de cosas
+
+
+
+# Que mejoraria ? 
+
 ## Hospital Management System
 
 ### Mejoras en la Base de Datos
