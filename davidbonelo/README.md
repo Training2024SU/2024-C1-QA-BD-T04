@@ -41,9 +41,10 @@ Archivo [hispital_views.sql](./hispital_views.sql)
 
 ### Stored procedures
 
-Creo los stored procedures para realizar operaciones crud con ejemplos de su uso comentados:
+Creo los stored procedures para realizar operaciones crud en las db de la librería y el hospital incluyendo ejemplos de su uso con comentarios:
 
 - [libreria_procedures.sql](./libreria_procedures.sql)
+- [hospital_procedures.sql](./hospital_procedures.sql)
 
 ### Triggers
 
