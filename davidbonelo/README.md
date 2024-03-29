@@ -21,3 +21,5 @@ Archivo [libreria_views.sql](./libreria_views.sql)
 De acuerdo al modelo relacional del hospital, realizo la definición de la base de datos en sql: [hospital_schema.sql](./hospital_schema.sql)
 
 Script de poblado de la db hospital: [hospital_populate.sql](./hospital_populate.sql)
+
+Consultas a la db del hospital: [hospital_queries.sql](./hospital_queries.sql)
