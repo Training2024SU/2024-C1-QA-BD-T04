@@ -48,6 +48,7 @@ Creo los stored procedures para realizar operaciones crud en las db de la librer
 
 ### Triggers
 
-Creo la tabla `control_de_cambios_librería` y los triggers para registrar en la tabla cuando se inserta o se borra una fila:
+Creo las tablas `control_de_cambios_librería`, `control_de_cambios_hospital` y los triggers para llenarlas cuando se inserta o se borra una registro:
 
 - [libreria_triggers.sql](./libreria_triggers.sql)
+- [hospital_triggers.sql](./hospital_triggers.sql)
