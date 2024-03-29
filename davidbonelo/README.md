@@ -52,3 +52,14 @@ Creo las tablas `control_de_cambios_librería`, `control_de_cambios_hospital` y 
 
 - [libreria_triggers.sql](./libreria_triggers.sql)
 - [hospital_triggers.sql](./hospital_triggers.sql)
+
+## Mejoras al modelo
+
+Solicitando la descripción de cuáles son las reglas del negocio se puede analizar a profundidad el diseño del modelo, sin embargo a simple vista realizo las siguientes sugerencias:
+
+- A un paciente le pueden realizar **varios** procedimientos en lugar de uno solo
+- Un procedimiento debe ser realizado por **mínimo un** medico (participación total)
+- Ya que los medicamentos tienen un identificador y se relaciona con muchos pacientes, me parece que la relación paciente **solicitar** medicamentos sería más adecuado que "tomar" en el contexto del hospital.
+- Medicamentos podría tener un atributo de `cantidad` o "stock".
+- Agregar la relación de muchos a muchos **incluir** entre factura y procedimientos con participación total del lado de factura.
+- Procedimiento puede tener el atributo `precio`
