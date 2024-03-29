@@ -36,3 +36,11 @@ Las 3 vistas más relevantes que escogí son las que permiten identificar inform
 finalmente agregué una vista general de todos los procedimientos, relacionando los pacientes, médicos y la cantidad de enfermeros involucrados.
 
 Archivo [hispital_views.sql](./hispital_views.sql)
+
+## Tercera actividad
+
+### Stored procedures
+
+Creo los stored procedures para realizar operaciones crud con ejemplos de su uso comentados:
+
+- [libreria_procedures.sql](./libreria_procedures.sql)
