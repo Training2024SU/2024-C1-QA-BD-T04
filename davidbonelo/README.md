@@ -44,3 +44,9 @@ Archivo [hispital_views.sql](./hispital_views.sql)
 Creo los stored procedures para realizar operaciones crud con ejemplos de su uso comentados:
 
 - [libreria_procedures.sql](./libreria_procedures.sql)
+
+### Triggers
+
+Creo la tabla `control_de_cambios_librería` y los triggers para registrar en la tabla cuando se inserta o se borra una fila:
+
+- [libreria_triggers.sql](./libreria_triggers.sql)
