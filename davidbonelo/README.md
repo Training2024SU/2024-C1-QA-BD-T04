@@ -8,7 +8,8 @@ Script de poblado de la base de datos: [libreria_populate.sql](./libreria_popula
 
 5 Consultas a la librería: [libreria_queries.sql](./libreria_queries.sql)
 
-Vistas realizadas:
+### Vistas realizadas:
+
 Las 2 vistas más relevantes para obtener de esta base de datos son las que otorgan información sobre el negocio, facilitando la toma de desiciónes. Por lo tanto realicé vistas que muestran información relacionada con las ventas y los clientes.
 
 - Libros más vendidos en orden
@@ -23,3 +24,15 @@ De acuerdo al modelo relacional del hospital, realizo la definición de la base 
 Script de poblado de la db hospital: [hospital_populate.sql](./hospital_populate.sql)
 
 Consultas a la db del hospital: [hospital_queries.sql](./hospital_queries.sql)
+
+### Vistas realizadas:
+
+Las 3 vistas más relevantes que escogí son las que permiten identificar información crítica para el funcionamiento del hospital, tales como:
+
+- Los medicamentos más demandados
+- Los pacientes que más facturas pagan
+- Los médicos que más procedimientos han realizado.
+
+finalmente agregué una vista general de todos los procedimientos, relacionando los pacientes, médicos y la cantidad de enfermeros involucrados.
+
+Archivo [hispital_views.sql](./hispital_views.sql)
