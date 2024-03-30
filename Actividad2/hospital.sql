@@ -125,13 +125,22 @@ INSERT INTO tb_factura (fecha, valor_total, id_paciente) VALUES
     ('2024-03-20', 320.00, 8);
 
 -- Consultas
+-- Paciente, medicamento y dosis
+SELECT CONCAT(p.nombre_paciente, ' ', p.apellido_paciente) AS paciente, 
+       CONCAT(m.nombre_medicamento, ' - ', m.dosis) AS Medicamento
+FROM tb_paciente AS p
+LEFT JOIN tb_medicamento AS m ON p.id_procedimiento = m.id_medicamento;
 
-SELECT DISTINCT e.nombre_enfermero, e.apellido_enfermero, p.nombre_paciente, p.apellido_paciente, pr.tipo_procedimiento
-FROM tb_enfermero e
+
+
+-- Enfermeros presentes en los procedimientos de los pacientes.
+SELECT DISTINCT CONCAT(e.nombre_enfermero, ' ', e.apellido_enfermero) AS nombre_completo_enfermero,
+                CONCAT(p.nombre_paciente, ' ', p.apellido_paciente) AS nombre_completo_paciente,
+                pr.tipo_procedimiento AS tipo_procedimiento
+FROM tb_enfermero AS e
 INNER JOIN tb_medico AS m ON e.id_medico = m.id_medico
 INNER JOIN tb_paciente AS p ON m.id_medico = p.id_procedimiento
 INNER JOIN tb_procedimiento AS pr ON p.id_procedimiento = pr.id_procedimiento;
-
 
 
 
