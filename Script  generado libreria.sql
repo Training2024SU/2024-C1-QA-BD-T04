@@ -203,49 +203,38 @@ VALUES
 ('5678901234', '555-8765532'); -- Carlos López
 
 
--- Consultas
+-- Vistas
 
--- Selecciona el nombre y la fecha de nacimiento de cada escritor
+-- Vista que muestra el inventario de libros disponibles
+CREATE VIEW Vista_Inventario_Libros AS
 SELECT 
-    nombre, 
-    `fecha de nacimiento` AS fecha_nacimiento
-FROM autor;
+    l.ISBN AS ISBN,
+    l.titulo AS titulo,
+    l.nombre_editorial AS editorial,
+    l.numero_paginas AS num_paginas,
+    COUNT(lc.ISBN_libro_cliente) AS cantidad_en_stock
+FROM 
+    LibreriaBuscaLibre.libro AS l
+LEFT JOIN 
+    LibreriaBuscaLibre.libro_cliente AS lc ON l.ISBN = lc.ISBN_libro_cliente
+GROUP BY 
+    l.ISBN, l.titulo, l.nombre_editorial, l.numero_paginas;
 
--- Cuenta la cantidad de libros vendidos 
+-- Vista que muestra la lista de clientes registrados
+CREATE VIEW Vista_Clientes_Registrados AS
 SELECT 
-    COUNT(DISTINCT ISBN_libro_cliente) AS libros_vendidos
-FROM libro_cliente;
-
-
--- Muestra el nombre del cliente y su número de teléfono asociado
-SELECT 
-    c.nombre AS nombre_cliente, 
+    c.cedula AS cedula_cliente,
+    c.nombre AS nombre_cliente,
     tc.numero AS numero_telefono
 FROM 
     LibreriaBuscaLibre.cliente AS c
-INNER JOIN 
+LEFT JOIN 
     LibreriaBuscaLibre.telefono_cliente AS tc ON c.cedula = tc.cedula_cliente;
 
 
+-- Ver la vista de Inventario de Libros
+SELECT * FROM Vista_Inventario_Libros;
 
--- Muestra el título de cada libro junto con los nombres de los autores separados por comas
-SELECT 
-    l.titulo AS nombre_libro, 
-    GROUP_CONCAT(a.nombre SEPARATOR ', ') AS autores
-FROM libro AS l
-INNER JOIN libro_autor AS la ON l.ISBN = la.ISBN_libro
-INNER JOIN autor AS a ON la.id_autor = a.id
-GROUP BY l.titulo;
-
--- Editoriales que han vendido libros
-SELECT e.nombre AS nombre_editorial
-FROM Editorial AS e
-INNER JOIN libro AS l ON e.nombre = l.nombre_editorial
-INNER JOIN libro_cliente AS lc ON l.ISBN = lc.ISBN_libro_cliente
-GROUP BY e.nombre;
-
-
-
-
-
+-- Ver la vista de Clientes Registrados
+SELECT * FROM Vista_Clientes_Registrados;
 
