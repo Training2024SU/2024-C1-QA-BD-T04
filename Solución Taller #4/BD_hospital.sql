@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `medicamento` (
   PRIMARY KEY (`nombre`)
 );
 
--- Crear tabla medicamento
+-- Crear tabla medico
 CREATE TABLE IF NOT EXISTS `medico` (
   `id_medico` varchar(30) NOT NULL,
   `nombre` varchar(45) NOT NULL,
