@@ -202,3 +202,50 @@ VALUES
 ('4567890123', '555-4324321'), -- Ana Martínez
 ('5678901234', '555-8765532'); -- Carlos López
 
+
+-- Consultas
+
+-- Selecciona el nombre y la fecha de nacimiento de cada escritor
+SELECT 
+    nombre, 
+    `fecha de nacimiento` AS fecha_nacimiento
+FROM autor;
+
+-- Cuenta la cantidad de libros vendidos 
+SELECT 
+    COUNT(DISTINCT ISBN_libro_cliente) AS libros_vendidos
+FROM libro_cliente;
+
+
+-- Muestra el nombre del cliente y su número de teléfono asociado
+SELECT 
+    c.nombre AS nombre_cliente, 
+    tc.numero AS numero_telefono
+FROM 
+    LibreriaBuscaLibre.cliente AS c
+INNER JOIN 
+    LibreriaBuscaLibre.telefono_cliente AS tc ON c.cedula = tc.cedula_cliente;
+
+
+
+-- Muestra el título de cada libro junto con los nombres de los autores separados por comas
+SELECT 
+    l.titulo AS nombre_libro, 
+    GROUP_CONCAT(a.nombre SEPARATOR ', ') AS autores
+FROM libro AS l
+INNER JOIN libro_autor AS la ON l.ISBN = la.ISBN_libro
+INNER JOIN autor AS a ON la.id_autor = a.id
+GROUP BY l.titulo;
+
+-- Editoriales que han vendido libros
+SELECT e.nombre AS nombre_editorial
+FROM Editorial AS e
+INNER JOIN libro AS l ON e.nombre = l.nombre_editorial
+INNER JOIN libro_cliente AS lc ON l.ISBN = lc.ISBN_libro_cliente
+GROUP BY e.nombre;
+
+
+
+
+
+
