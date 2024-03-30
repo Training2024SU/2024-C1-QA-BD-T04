@@ -142,7 +142,27 @@ INNER JOIN tb_medico AS m ON e.id_medico = m.id_medico
 INNER JOIN tb_paciente AS p ON m.id_medico = p.id_procedimiento
 INNER JOIN tb_procedimiento AS pr ON p.id_procedimiento = pr.id_procedimiento;
 
+-- Vistas
+
+CREATE VIEW vista_resumen_medicos AS
+SELECT id_medico, CONCAT(nombre_medico, ' ', apellido_medico) AS medico, especialidad
+FROM tb_medico;
 
 
+CREATE VIEW vista_informacion_paciente AS
+SELECT p.id_paciente, CONCAT(p.nombre_paciente, ' ', p.apellido_paciente) AS paciente,
+       pr.tipo_procedimiento AS procedimiento_medico,
+       f.fecha AS fecha_procedimiento
+FROM tb_paciente p
+LEFT JOIN tb_procedimiento pr ON p.id_procedimiento = pr.id_procedimiento
+LEFT JOIN tb_factura f ON p.id_paciente = f.id_paciente;
 
 
+CREATE VIEW vista_medicamentos AS
+SELECT id_medicamento, nombre_medicamento, dosis
+FROM tb_medicamento;
+
+
+SELECT * FROM vista_medicamentos;
+SELECT * FROM vista_informacion_paciente;
+SELECT * FROM vista_resumen_medicos;
