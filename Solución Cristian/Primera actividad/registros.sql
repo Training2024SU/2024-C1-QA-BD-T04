@@ -46,13 +46,13 @@ INSERT INTO `LibreriaBuscaLibre`.`libro_autor` (`ISBN_libro`, `id_autor`) VALUES
 ('ISBN1001', 'A101'),
 ('ISBN1002', 'A102'),
 ('ISBN1003', 'A103'),
-('ISBN1004', 'A104'),
-('ISBN1005', 'A105'),
-('ISBN1006', 'A101'),
-('ISBN1007', 'A102'),
-('ISBN1008', 'A103'),
-('ISBN1009', 'A104'),
-('ISBN1010', 'A105');
+('ISBN1003', 'A104'),
+('ISBN1004', 'A105'),
+('ISBN1005', 'A101'),
+('ISBN1005', 'A102'),
+('ISBN1006', 'A103'),
+('ISBN1007', 'A104'),
+('ISBN1008', 'A105');
 
 INSERT INTO `LibreriaBuscaLibre`.`libro_cliente` (`ISBN_libro_cliente`, `id_cliente`) VALUES
 ('ISBN1001', 'C1001'),
@@ -60,11 +60,11 @@ INSERT INTO `LibreriaBuscaLibre`.`libro_cliente` (`ISBN_libro_cliente`, `id_clie
 ('ISBN1003', 'C1003'),
 ('ISBN1004', 'C1004'),
 ('ISBN1005', 'C1005'),
-('ISBN1006', 'C1001'),
-('ISBN1007', 'C1002'),
-('ISBN1008', 'C1003'),
-('ISBN1009', 'C1004'),
-('ISBN1010', 'C1005');
+('ISBN1006', 'C1006'),
+('ISBN1007', 'C1007'),
+('ISBN1002', 'C1001'),
+('ISBN1003', 'C1002'),
+('ISBN1014', 'C1003');
 
 INSERT INTO `LibreriaBuscaLibre`.`telefono_cliente` (`cedula_cliente`, `numero`) VALUES
 ('C1001', '555-1234'),
