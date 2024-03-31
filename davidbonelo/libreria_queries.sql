@@ -21,6 +21,15 @@ FROM
         LEFT JOIN
     cliente AS c ON id_cliente = cedula;
 
+-- O interpretandolo como el número de veces que se ha vendido cada libro:
+SELECT 
+    l.ISBN, l.titulo, COUNT(l.ISBN) AS `ejemplares_vendidos`
+FROM
+    libro_cliente AS lc
+        LEFT JOIN
+    libro AS l ON ISBN_libro_cliente = ISBN
+GROUP BY l.ISBN;
+
 -- el nombre de su cliente acompañado de sus numeros teléfonicos
 SELECT 
     c.nombre, t.numero
@@ -39,7 +48,7 @@ SELECT
 FROM
     libro AS l
         LEFT JOIN
-    libro_autor AS la ON LA.ISBN_libro = l.ISBN
+    libro_autor la ON la.ISBN_libro = l.ISBN
         LEFT JOIN
     autor AS a ON la.id_autor = a.id;
     
