@@ -70,6 +70,7 @@ INSERT INTO paciente_medicamento VALUES
     (502, 302),
     (503, 303),
     (504, 304),
+    (503, 301),
     (505, 305);
 
 -- Relacionar medicos con procedimientos

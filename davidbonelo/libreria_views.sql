@@ -1,3 +1,6 @@
+DROP VIEW IF EXISTS libros_vendidos;
+DROP VIEW IF EXISTS clientes_frequentes;
+
 -- vista libros más vendidos en orden
 CREATE VIEW libros_vendidos AS
     SELECT 
@@ -9,7 +12,7 @@ CREATE VIEW libros_vendidos AS
     GROUP BY l.ISBN
     ORDER BY cantidad_vendidos DESC;
         
-        select * from books_sold;
+SELECT * FROM libros_vendidos;
 
 -- vista clientes más frecuentes
 CREATE VIEW clientes_frequentes AS
@@ -22,4 +25,4 @@ CREATE VIEW clientes_frequentes AS
     GROUP BY c.cedula
     ORDER BY cantidad_comprados DESC;
         
-        select * from books_sold;
+SELECT * FROM clientes_frequentes;
