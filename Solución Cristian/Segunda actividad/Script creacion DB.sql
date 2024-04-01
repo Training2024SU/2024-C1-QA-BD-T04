@@ -138,7 +138,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `hospital_db`.`tb_medicamento` (
   `id_medicamento` INT NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
-  `dósis` DECIMAL(3,1) NOT NULL,
+  `dósis` DECIMAL(6,1) NOT NULL,
   PRIMARY KEY (`id_medicamento`))
 ENGINE = InnoDB;
 
